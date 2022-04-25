@@ -1,0 +1,1 @@
+import{MTLLoader}from"../../../../jsm/loaders/MTLLoader.js";const MtlObjBridge={link:function(a,r){"function"==typeof r.addMaterials&&r.addMaterials(this.addMaterialsFromMtlLoader(a),!0)},addMaterialsFromMtlLoader:function(a){let r={};return a instanceof MTLLoader.MaterialCreator&&(a.preload(),r=a.materials),r}};export{MtlObjBridge};

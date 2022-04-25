@@ -1,0 +1,1 @@
+function NodeUniform(e){e=e||{},this.name=e.name,this.type=e.type,this.node=e.node,this.needsUpdate=e.needsUpdate}Object.defineProperties(NodeUniform.prototype,{value:{get:function(){return this.node.value},set:function(e){this.node.value=e}}});export{NodeUniform};

@@ -1,0 +1,92 @@
+
+@import "../../libs/styles/components/burger_01.scss";
+
+.header-wrap{
+    position: fixed; display: flex; flex-direction: row;
+    width: 100%; height: $headerHeightLG; top:0; left:0;
+    background-color: rgba(255,255,255,1); z-index: 1000;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.3) 20%,rgba(0,0,0,0) 100% );
+    transition: all 0.3s;
+    
+    header { 
+        position: relative; display: flex; flex-direction: row;
+        width: 100%; height: $headerHeightLG; top:0; left:0;
+    }
+    .logo-wrap {
+        position: relative; width: 169px; height: 33px; left: 24px; top: 20px;
+        background-repeat: no-repeat; background-size: 169px 33px;
+        background-image: url(../../img/common/logo_a.png);
+        a { position: absolute; width:100%; height: 100%;}
+    }
+    .gnb-menu-wrap{
+        position: relative; display: flex; flex-direction: row; margin-left: 42px;
+        .gnb-menu {
+            position: relative; padding: 0 16px; line-height:$headerHeightLG; cursor: pointer; float:left;
+            font-family: 'Poppins'; font-weight: bold; color: #000;
+            text-transform: uppercase;
+            &:hover, &:focus-within { color: #000; }                   
+        }        
+    }
+    .menu-wrap{
+        position: absolute; top:0; right:20px; height: 100%;
+        a { display: inline-block; }
+        .search-wrap {
+            position: absolute; width: 56px; height: 56px; right: 80px;
+            margin: auto; top:0; bottom: 0;
+        }
+        .burger-wrap{
+            position: absolute; width: 56px; height: 30px; margin: auto;
+            right:0; top:24px; 
+        }
+    }
+    &.depth {
+        position: absolute; 
+        background:none; background-color: rgba(255,255,255,1);
+    }
+    
+    &.home {
+        background-color:rgba(255,255,255,0);
+        .logo-wrap {           
+            background-image: url(../../img/common/logo_a_nega.png);    
+        }
+        .gnb-menu-wrap{            
+            .gnb-menu {
+                color: #fff;
+                &:hover, &:focus-within { color: #fff; }                   
+            }        
+        }
+        .menu-wrap{
+            .search-wrap{
+                svg{
+                    path{
+                        fill:#fff;
+                    }
+                }
+            }
+            .burger-click-region{
+                .burger-menu-piece{
+                    border-top: 3px solid #fff;
+                }
+            }
+        }
+    }
+    &.white-back{
+        background: none; background-color: #fff; 
+    }
+    &.mo {
+        height: 54px;
+        .logo-wrap { 
+            transform: scale(0.8); transform-origin: 0 0; top: 14px;
+            left: 18px;
+        }
+        .menu-wrap{
+            transform: scale(0.8); right:2px; top: -8px;
+            
+        }
+        
+    }
+}    
+
+ 
+
+

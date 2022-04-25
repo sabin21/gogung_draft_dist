@@ -1,0 +1,222 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #2A3139;
+  font-family: "IBM Plex Sans";
+  height: 100%;
+}
+
+body:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 674px;
+  background-color: #212830;
+}
+
+.wrap-index {
+  position: relative;
+  width: 100%;
+  min-height: 420vh;
+}
+
+.wrap-index .concept-wrap {
+  position: absolute;
+  width: calc(100% + 72px);
+  height: 100%;
+  background-color: #F2F4F4;
+  z-index: 10;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  left: -100%;
+}
+
+.wrap-index .concept-wrap .concept-inner-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  text-align: center;
+}
+
+.wrap-index .concept-wrap .concept-inner-wrap .inin {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.wrap-index .concept-wrap .concept-inner-wrap .inin img {
+  width: 100%;
+  max-width: 1600px;
+}
+
+.wrap-index .concept-wrap .concept-inner-wrap span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: gray;
+  line-height: 0;
+}
+
+.wrap-index .concept-wrap .concept-inner-wrap p {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.wrap-index .concept-wrap .left-bar {
+  position: absolute;
+  width: 72px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.wrap-index .concept-wrap .left-bar .title {
+  position: absolute;
+  height: 20px;
+  width: 100vh;
+  font-size: 20px;
+  font-weight: bold;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+  left: 50px;
+  top: 100px;
+}
+
+.wrap-index .concept-wrap .btn-concept-close {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  right: 96px;
+  top: 24px;
+  cursor: pointer;
+  z-index: 30;
+}
+
+.wrap-index .concept-wrap .btn-concept-close img {
+  max-width: 100%;
+}
+
+.wrap-index .inner-wrap {
+  position: absolute;
+  width: calc(100% - 72px);
+  height: 100%;
+  right: 0;
+}
+
+.wrap-index .inner-wrap .title-wrap {
+  width: 100%;
+  text-align: center;
+  padding: 4rem;
+}
+
+.wrap-index .inner-wrap .title-wrap .logo {
+  position: relative;
+  width: 130px;
+  margin: 3rem auto 0 auto;
+}
+
+.wrap-index .inner-wrap .title-wrap h1 {
+  color: #fff;
+  font-size: 3vw;
+  font-weight: bold;
+  margin-top: 5rem;
+}
+
+.wrap-index .inner-wrap .content-wrap {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 4rem;
+  width: 100%;
+  max-width: 960px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrap-index .inner-wrap .content-wrap .card-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  margin-top: 5rem;
+}
+
+.wrap-index .inner-wrap .content-wrap .card-wrap .card {
+  width: 100%;
+  height: auto;
+  min-height: 337px;
+  overflow: hidden;
+  background-color: gray;
+  background-size: cover;
+}
+
+.wrap-index .inner-wrap .content-wrap .card-wrap p {
+  color: #fff;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 1rem;
+}
+
+.wrap-index .inner-wrap .links-wrap {
+  position: relative;
+  margin: 6rem auto 10rem auto;
+  width: 100%;
+  max-width: 960px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.wrap-index .inner-wrap .links-wrap ul {
+  width: 100%;
+  padding: 2rem 0 4rem 0;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-top: 2px solid gray;
+}
+
+.wrap-index .inner-wrap .links-wrap ul li {
+  width: 33.333%;
+}
+
+.wrap-index .inner-wrap .links-wrap ul li.title {
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 0 1.5rem 0;
+}
+
+.wrap-index .inner-wrap .links-wrap ul li a {
+  color: #fff;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.wrap-index .inner-wrap .links-wrap ul li a.dimmed {
+  color: #000;
+}
+/*# sourceMappingURL=index.css.map */

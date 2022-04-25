@@ -1,0 +1,1 @@
+const ObjectManipulator={applyProperties:function(t,n,e){if(null==t||null==n)return;let r,o,p;for(r in n)o="set"+r.substring(0,1).toLocaleUpperCase()+r.substring(1),p=n[r],"function"==typeof t[o]?t[o](p):(t.hasOwnProperty(r)||e)&&(t[r]=p)}};export{ObjectManipulator};

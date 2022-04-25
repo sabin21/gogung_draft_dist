@@ -1,0 +1,362 @@
+
+@import './_colors.scss';
+
+//
+// Variables
+//
+
+$prefix: 'vkui' !default;
+
+$coreone--ease-in: cubic-bezier(0.25, 0, 1, 1); // Used primarily for removing elements from the screen.
+$coreone--ease-out: cubic-bezier(
+  0,
+  0,
+  0.25,
+  1
+); // Used for adding elements to the screen or changing on-screen states at a users's input.
+$coreone--standard-easing: cubic-bezier(0.5, 0, 0.1, 1); // Used for the majority of animations.
+
+// For back-ward compatibility
+$c1--ease-in: $coreone--ease-in;
+$c1--ease-out: $coreone--ease-out;
+$c1--standard-easing: $coreone--standard-easing;
+
+$transition--base: 250ms;
+$transition--expansion: 300ms;
+
+// Color System
+//--------------------------------------------------
+
+$white: #fff !default;
+$black:#000 !default;
+
+$p1-025:  #FFE8F2;
+$p1-050:  #FFB6CE;
+$p1-075:  #EF6694;
+$p1-100:  #DE1B6F;
+$p1-200:  #C20254;
+$p1-300:  #8D0753;
+$p1-400:  #620037;
+
+$p2-025:  #FFFAE6;
+$p2-050:  #FFF0B3;
+$p2-075:  #FFD231;
+$p2-100:  #FF9600;
+$p2-200:  #FF5E00;
+$p2-300:  #DC1900;
+$p2-400:  #8C1800;
+
+$ui-01:#fff;
+$ui-02:#F8F9FA;
+$ui-03:#E9EEF1;
+$ui-04:#D7DCE0;
+$ui-05:#5A6872;
+$ui-06:#52606B;
+
+$text-base-01: #212529;
+$text-base-02: #495057;
+$text-base-03: #6F757C;
+$text-base-04: #CDD1D4;
+
+$success: $c1-colors__green-080;
+$info: $c1-colors__cyan-080;
+$warning: $c1-colors__yellow-080;
+$danger: $c1-colors__red-100;
+
+$brand-01: $p1-100;
+$brand-02: $p2-100;
+$hover-primary: $p1-200;
+$inverse-01: $white;
+$field-01: $ui-02;
+$field-02: $ui-03;
+$focus: $ui-05;
+
+// yiq contrast 함수의 분기점이 되는 역치값 설정
+$yiq-contrasted-threshold: 150 !default;
+
+// yiq contrast 함수를 사용하여 변경되는 어두운 텍스트 색상과 밝은 텍스트 색상 설정
+$yiq-text-dark: $text-base-01 !default;
+$yiq-text-light: $white !default;
+
+// Links
+$link-color:                $p1-100 !default;
+$link-decoration:           none !default;
+$link-hover-color:          darken($link-color, 15%) !default;
+$link-hover-decoration:     underline !default;
+$link-active:$p1-100 !default;
+
+$input-border: 1px solid transparent !default !global;
+$input-label-weight: 600 !default !global;
+
+
+// Spacing
+//--------------------------------------------------
+
+$spacing-baseline: 1rem !default;
+
+$spacing-4xs: $spacing-baseline * 0.0625 !default;
+$spacing-3xs: $spacing-baseline * 0.125 !default;
+$spacing-2xs: $spacing-baseline * 0.25 !default;
+$spacing-xs: $spacing-baseline * 0.5 !default;
+$spacing-sm: $spacing-baseline * 0.75 !default;
+$spacing-md: $spacing-baseline !default;
+$spacing-lg: $spacing-baseline * 1.5 !default;
+$spacing-xl: $spacing-baseline * 2 !default;
+$spacing-2xl: $spacing-baseline * 2.5 !default;
+$spacing-3xl: $spacing-baseline * 3 !default;
+
+$layout-2xs: $spacing-baseline !default;
+$layout-xs: $spacing-baseline * 1.5 !default;
+$layout-sm: $spacing-baseline * 2 !default;
+$layout-md: $spacing-baseline * 3 !default;
+$layout-lg: $spacing-baseline * 4 !default;
+$layout-xl: $spacing-baseline * 6 !default;
+$layout-2xl: $spacing-baseline * 10 !default;
+
+$spacing-01: $spacing-baseline * 0.125 !default;
+$spacing-02: $spacing-baseline * 0.25 !default;
+$spacing-03: $spacing-baseline * 0.5 !default;
+$spacing-04: $spacing-baseline * 0.75 !default;
+$spacing-05: $spacing-baseline !default;
+$spacing-06: $spacing-baseline * 1.5 !default;
+$spacing-07: $spacing-baseline * 2 !default;
+$spacing-08: $spacing-baseline * 2.5 !default;
+$spacing-09: $spacing-baseline * 3 !default;
+$spacing-10: $spacing-baseline * 3.5 !default;
+
+$layout-01: $spacing-baseline !default;
+$layout-02: $spacing-baseline * 1.5 !default;
+$layout-03: $spacing-baseline * 2 !default;
+$layout-04: $spacing-baseline * 3 !default;
+$layout-05: $spacing-baseline * 4 !default;
+$layout-06: $spacing-baseline * 5.5 !default;
+$layout-07: $spacing-baseline * 8 !default;
+$layout-08: $spacing-baseline * 10 !default;
+$layout-09: $spacing-baseline * 12 !default;
+
+
+
+// Typography
+//--------------------------------------------------
+
+$font-family-sans-serif:    "Noto Sans CJK","Malgun Gothic","AppleSDGothicNeo","Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-monospace:     SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:          $font-family-sans-serif !default;
+
+$font-xl5: 3.5rem;
+$font-xl4: 3rem;
+$font-xl3: 2.25rem;
+$font-xl2: 2rem;
+$font-xl: 1.75rem;
+$font-lg: 1.5rem;
+$font-md: 1.25rem;
+$font-sm: 1.125rem;
+$font-base: 1rem;
+$font-xs: 0.875rem;
+$font-xs2: 0.75rem;
+$font-xs3: 0.6875rem;
+
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+
+$font-weight-base:            $font-weight-normal !default;
+$line-height-base:            1.5em !default;
+
+$font-size-base:              1rem !default;
+
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.3 !default;
+$h6-font-size:                $font-size-base !default;
+
+$headings-margin-bottom:      $spacing-md !default;
+$headings-font-family:        inherit !default;
+$headings-font-weight:        400 !default;
+$headings-line-height:        1.25em !default;
+$headings-color:              inherit !default;
+
+$font-size-p-small: 14px;
+$font-size-p-tiny: 12px;
+
+$display1-size:               5rem !default;
+$display2-size:               4.5rem !default;
+$display3-size:               4rem !default;
+$display4-size:               3.5rem !default;
+
+$display1-weight:             700 !default;
+$display2-weight:             700 !default;
+$display3-weight:             700 !default;
+$display4-weight:             700 !default;
+$display-line-height:         1.25em !default;
+
+$base-letterspacing:          -0.025em;
+
+$paragraph-margin-bottom: 1rem;
+
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding:          .75rem !default;
+$table-cell-padding-sm:       .3rem !default;
+
+$table-bg:                    transparent !default;
+$table-accent-bg:             rgba($black, .05) !default;
+$table-hover-bg:              rgba($black, .075) !default;
+$table-active-bg:             $table-hover-bg !default;
+
+$table-border-width:          1px !default;
+$table-border-color:          $ui-03 !default;
+
+$table-head-bg:               $c1-colors__cool-gray-020 !default;
+$table-head-color:            $c1-colors__cool-gray-080 !default;
+
+$table-dark-bg:               $c1-colors__cool-gray-500 !default;
+$table-dark-accent-bg:        rgba($white, .05) !default;
+$table-dark-hover-bg:         rgba($white, .075) !default;
+$table-dark-border-color:     lighten($c1-colors__cool-gray-500, 7.5%) !default;
+
+/// Motion
+//
+$duration-quick: 150ms;
+$duration-base: 250ms;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$line-height-lg:              1.5 !default;
+$line-height-sm:              1.25 !default;
+
+$border-width:                1px !default;
+$border-color:                $c1-colors__cool-gray-020 !default;
+
+$border-radius:               .25rem !default;
+$border-radius-lg:            .3rem !default;
+$border-radius-sm:            .2rem !default;
+$btn-border-radius:           0.125rem !default;
+$btn-border-width:            1px;
+
+$rounded-pill:                50rem !default;
+
+$box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
+$box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
+
+$component-active-color:      $white !default;
+$component-active-bg:         $p1-100 !default;
+
+$caret-width:                 .3em !default;
+
+$transition-base:             all .2s ease-in-out !default;
+$transition-fade:             opacity .15s linear !default;
+$transition-collapse:         height .35s ease !default;
+
+$embed-responsive-aspect-ratios: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$embed-responsive-aspect-ratios: join(
+  (
+    (21 9),
+    (16 9),
+    (3 4),
+    (1 1),
+  ),
+  $embed-responsive-aspect-ratios
+);
+
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+$checkbox-border-width:       2px;
+$input-label-weight:          700 !default;
+$input-btn-padding-y:         .375rem !default;
+$input-btn-padding-x:         .75rem !default;
+$input-btn-font-size:         $font-xs !default;
+$input-btn-line-height:       $line-height-base !default;
+
+$input-btn-focus-width:       .2rem !default;
+$input-btn-focus-color:       rgba($component-active-bg, .25) !default;
+$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
+
+$input-btn-padding-y-sm:      .25rem !default;
+$input-btn-padding-x-sm:      .5rem !default;
+$input-btn-font-size-sm:      $font-xs !default;
+$input-btn-line-height-sm:    $line-height-sm !default;
+
+$input-btn-padding-y-lg:      .75rem !default;
+$input-btn-padding-x-lg:      1rem !default;
+$input-btn-font-size-lg:      $font-base !default;
+$input-btn-line-height-lg:    $line-height-lg !default;
+
+$input-btn-border-width:      $border-width !default;
+
+// Buttons
+$btn-height-lg:               40px;
+$btn-padding-y:               $input-btn-padding-y !default;
+$btn-padding-x:               $input-btn-padding-x !default;
+$btn-font-size:               $input-btn-font-size !default;
+$btn-line-height:             $input-btn-line-height !default;
+
+$btn-padding-y-sm:            $input-btn-padding-y-sm !default;
+$btn-padding-x-sm:            $input-btn-padding-x-sm !default;
+$btn-font-size-sm:            $input-btn-font-size-sm !default;
+$btn-line-height-sm:          $input-btn-line-height-sm !default;
+
+$btn-padding-y-lg:            $input-btn-padding-y-lg !default;
+$btn-padding-x-lg:            $input-btn-padding-x-lg !default;
+$btn-font-size-lg:            $input-btn-font-size-lg !default;
+$btn-line-height-lg:          $input-btn-line-height-lg !default;
+
+$btn-border-width:            $input-btn-border-width !default;
+
+$btn-font-weight:             700 !default;
+
+$btn-link-disabled-color:     $c1-colors__cool-gray-200 !default;
+
+$btn-block-spacing-y:         .5rem !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           0 !default;
+$btn-border-radius-lg:        $border-radius-lg !default;
+$btn-border-radius-sm:        $border-radius-sm !default;
+
+$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+
+$radio-border-width: 2px !default !global;
+
+// Content Switcher
+$content-switcher-border-radius: 0px !default !global;
+$content-switcher-option-border: 1px solid $brand-01 !default !global;
+
+/// Components
+//
+// article
+$article-head-height-full: 100vh;
+$article-head-height: 560px;
+
+//
+
+$btn-transition:  color .15s ease-in-out, background-color .15s ease-in-out, 
+border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+
+//
+//
+//
+
+
+// Color Theme Variables
+
+$hover-primary: darken($brand-01, 10%) !default !global;
+$hover-primary-text: darken($brand-01, 15%) !default !global;
+$hover-danger: darken($danger, 10%) !default !global;
+$hover-secondary: $brand-01 !default !global;
+$hover-row: rgba($brand-02, 0.1) !default !global;
+
+  
